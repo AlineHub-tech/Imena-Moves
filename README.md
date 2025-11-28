@@ -1,16 +1,61 @@
-# React + Vite
+# 🌟 IMENA MOVES – Attendance & Member Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+![React](https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge)
+![CSS](https://img.shields.io/badge/Style-CSS-important?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-1.0.0-yellow?style=for-the-badge)
+![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen?style=for-the-badge)
 
-Currently, two official plugins are available:
+IMENA MOVES is a modern, responsive, and animated member attendance system built with **React**.  
+It handles **attendance**, **member records**, **history tracking**, **analytics**, and **user management**, all stored on **LocalStorage** for simplicity and speed.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### ✅ **Member Management**
+- Add, edit, delete, search members  
+- Member information card  
+- Filter & advanced search  
 
-## Expanding the ESLint configuration
+### 🕒 **Attendance Tracking**
+- Mark attendance daily  
+- Real-time counting  
+- Daily & weekly summaries  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 📊 **History Tracking**
+- Full historical logs of every activity  
+- Track attendance per day / per member  
+- Automatic localStorage syncing  
+
+### ⚙️ **Settings & User Customization**
+- Theme options  
+- Sidebar & navbar animations  
+- Profile settings  
+- Notifications panel  
+
+### 🤝 **Collaboration Module**
+- Team management  
+- Internal messaging (future update)  
+- Activity feeds  
+
+### 🎬 **Entertainment Section**
+- News cards  
+- Videos / Music player (upcoming)  
+- Daily motivational messages  
+
+---
+
+## 🧱 Tech Stack
+
+| Layer       | Technology |
+|-------------|------------|
+| Frontend    | React JS |
+| Styling     | CSS3 / Custom UI |
+| State Mgmt  | LocalStorage |
+| Animations  | AOS / CSS keyframes |
+| Icons       | FontAwesome / Remix Icons |
+
+---
+
+## 📁 Project Structure
