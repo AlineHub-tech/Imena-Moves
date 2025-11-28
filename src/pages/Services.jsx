@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "../styles/InfoPage.css";
 import { FaMusic, FaGuitar, FaLaptop } from "react-icons/fa";
 
@@ -31,10 +32,10 @@ export default function Services(){
         ))}
       </div>
       <div className="lp-ctas">
-            <a href="/learn" className="btn primary">Learn More</a>
-            <a href="/about" className="btn ghost">About Us</a>
-            <a href="/" className="btn primary">Back Home</a>
-          </div>
+                  <a href="" className="btn primary"><Link to='/learn'>Learn More</Link></a>
+                  <a href="" className="btn ghost"><Link to='/about'>About Us</Link></a>
+                  <a href="" className="btn primary"><Link to='/'>Back Home</Link></a>
+                </div>
     </div>
   );
 }
