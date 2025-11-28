@@ -24,11 +24,6 @@ export default function UserDashboard() {
     <AppProvider>
     <div className="dash-roo">
       <h1>UserDashboard Overview</h1>
-       <div className="lp-ctas">
-                  <a href="" className="btn primary"><Link to='/learn'>Learn More</Link></a>
-                  <a href="" className="btn ghost"><Link to='/about'>About Us</Link></a>
-                  <a href="" className="btn primary"><Link to='/'>Back Home</Link></a>
-                </div>
       <div className="dash-sta">
         <div className="dash-cardi attendance">
           <div className="dash-title">Attendance Today</div>
@@ -70,3 +65,4 @@ export default function UserDashboard() {
     </AppProvider>
   );
 }
+
