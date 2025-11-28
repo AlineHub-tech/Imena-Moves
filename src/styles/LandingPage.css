@@ -33,14 +33,15 @@ animation: moveBg 8s ease-in-out infinite;
 -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
  animation:gradShift 6s linear infinite; display:inline-block; }
 .lp-sub{ color:#334155; margin-top:14px; font-size:1.125rem; }
-.lp-ctas{ margin-top:18px; display:flex; gap:12px; align-items:center; }
+.lp-ctas{text-decoration: none; margin-top:18px; display:flex; gap:12px; align-items:center; }
 .btn{ padding:10px 18px; border-radius:10px; text-decoration:none; font-weight:700;
    display:inline-block; transition:transform .18s ease, box-shadow .18s ease; }
 .btn.primary{ background:linear-gradient(90deg,#2563eb,#7c3aed); color:#fff; box-shadow:0 8px 30px rgba(37,99,235,0.12); }
 .btn.primary:hover{ transform:translateY(-5px); box-shadow:0 18px 50px rgba(124,58,237,0.14); }
 .btn.ghost{ background:transparent; border:2px solid rgba(255, 255, 255, 0.06); color:black; }
 .hp{color:white;margin-top:3%;margin-left:2%;}
-
+.btn.ghost a{text-decoration: none;color: black;}
+.btn.primary a{text-decoration: none;color: white;}
 
 .lp-hero-art{ position:relative; width:420px; display:flex; justify-content:center; align-items:center; }
 .lp-hero-art img{ width:100%; border-radius:18px; box-shadow:0 30px 80px rgba(2,6,23,0.08); transform:translateY(-4px); }
