@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "../styles/InfoPage.css";
 import { FaChild, FaHeart, FaGlobe } from "react-icons/fa";
 
@@ -38,9 +39,9 @@ export default function About(){
           </div>
         </div>
         <div className="lp-ctas">
-            <a href="/services" className="btn primary">Our Services</a>
-            <a href="/about" className="btn ghost">About Us</a>
-            <a href="/" className="btn primary">Back Home</a>
+            <a href="" className="btn primary"><Link to='/services'>Our Services</Link></a>
+            <a href="" className="btn ghost"><Link to='/learn'>Learn More</Link></a>
+            <a href="" className="btn primary"><Link to='/'>Back Home</Link></a>
           </div>
       </div>
     </div>
