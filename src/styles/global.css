@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #0f0f17, #1b1e44, #3e1270);
+  background-size: 300% 300%;
+  animation: bgMove 12s ease infinite;
+  color: white;
+  padding-bottom: 80px;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 22px;
+  /* color: #00d4ff; */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #00d4ff; }
+  to { text-shadow: 0 0 14px #0ff; }
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: .3s;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #00d4ff;
+}
+
+/* Responsive navbar */
+@media(max-width: 760px) {
+  .nav-links {
+    display: none;
+  }
+}
+
+/* SEARCH BAR */
+.search-bar {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+/* PAGE TITLE ANIMATION */
+.page-title {
+  margin: 40px 0;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.animated-text {
+  animation: textColor 4s infinite alternate;
+}
+
+@keyframes textColor {
+  from { color: #ffffff; }
+  to { color: #00d4ff; }
+}
+
+/* ===== CARDS GENERAL STYLE ===== */
+/* .cards-container {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+}
+
+@media(min-width: 760px) {
+  .cards-container {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(min-width: 1100px) {
+  .cards-container {
+    grid-template-columns: repeat(4,1fr);
+  }
+}
+
+.card {
+  background: rgba(255,255,255,0.07);
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  transition: .3s;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #00d4ff;
+  box-shadow: 0px 0px 20px rgba(0,212,255,0.2);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  padding: 15px;
+  color: rgba(255,255,255,0.6);
+} */
+

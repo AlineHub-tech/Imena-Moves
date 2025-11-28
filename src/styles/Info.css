@@ -1,0 +1,5 @@
+.page.info-page { display: flex; min-height: 100vh; background:white; } 
+.info-list { display: flex; flex-direction: column; gap: 12px; } 
+.info-item { background: #fff; padding: 15px; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.05); } 
+.dark-mode .info-item { background: #2c2c3f; color: #eee; }
+.dark-mode .page.info-page { background: #2c2c3f; color: #eee; }

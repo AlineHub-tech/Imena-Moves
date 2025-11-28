@@ -1,0 +1,6 @@
+.auth-root{ display:flex; align-items:center; justify-content:center; min-height:100vh; background:linear-gradient(180deg,#f8fafc,#eef2ff); padding:20px; }
+.auth-card{ width:100%; max-width:420px; background:#fff; padding:22px; border-radius:14px; box-shadow:0 12px 40px rgba(1, 3, 12, 0.82); }
+.auth-card h2{ margin:0 0 12px; color:#0b1220; }
+.auth-card label{ display:block; margin-top:12px; color:#475569; font-weight:700; }
+.auth-card input{ width:100%; padding:10px 12px; margin-top:6px; border-radius:8px; border:1px solid #e6eefc; }
+.auth-card p{ margin-top:14px; color:#475569; }
