@@ -24,8 +24,8 @@ export default function Landing(){
           <h1 className="lp-title">Talent. <span className="lp-animated">Discipline.</span> Movement.</h1>
           <p className="lp-sub">Join a vibrant performing community reshaping motion arts in Rwanda.</p>
           <div className="lp-ctas">
-            <a href="/userdashboard" className="btn primary">User Dashboard</a>
-            <a href="/learn" className="btn ghost">Learn More</a>
+            <a href=""className="btn primary"><Link to="/userdashboard">User Dashboard</Link></a>
+            <a href="" className="btn ghost"><Link to="/learn">Learn More</Link></a>
           </div>
 
           <div className="lp-highlights">
