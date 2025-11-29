@@ -1,5 +1,38 @@
-.page.info-page { display: flex; min-height: 100vh; background:white; } 
-.info-list { display: flex; flex-direction: column; gap: 12px; } 
-.info-item { background: #fff; padding: 15px; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.05); } 
-.dark-mode .info-item { background: #2c2c3f; color: #eee; }
-.dark-mode .page.info-page { background: #2c2c3f; color: #eee; }
+.ent-root {
+  padding: 28px;
+  max-width: 50%;
+  margin-left:10%;
+  font-family: Inter, system-ui;
+}
+
+.move-form{
+width:40%;
+}
+
+/* HERO */
+.info-hero { display:flex; gap:20px; align-items:center; }
+.hero-text h1 { font-size:28px; }
+
+/* CARD GRID */
+.card-grid {
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:18px;
+  margin-top:18px;
+}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .card-grid { grid-template-columns:repeat(2,1fr); }
+}
+
+@media(max-width:640px){
+  .info-hero{ flex-direction:column; text-align:center; }
+  .hero-text h1{ font-size:22px; }
+  .card-grid{ grid-template-columns:1fr; }
+}
+
+@media(max-width:480px){
+  .hero-icon{ width:64px;height:64px;font-size:24px; }
+}
+
