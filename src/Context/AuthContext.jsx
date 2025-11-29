@@ -1,61 +1,50 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
-const AppContext = createContext();
-export const useApp = () => useContext(AppContext);
+// Create context
+const AuthContext = createContext();
 
-export const AppProvider = ({ children }) => {
-  const [admin, setAdmin] = useState(null);     
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+// Admin credentials (shyira credentials wifuza)
+const ADMIN_USER = {
+  username: "admin",
+  password: "admin123",
+};
 
-  // Load from localStorage on first load
+export const AuthProvider = ({ children }) => {
+  const [admin, setAdmin] = useState(null);
+
+  // Load login state from localStorage
   useEffect(() => {
-    const savedAdmin = JSON.parse(localStorage.getItem("admin"));
-    const logged = localStorage.getItem("isLoggedIn") === "true";
-
-    if (savedAdmin && logged) {
-      setAdmin(savedAdmin);
-      setIsLoggedIn(true);
+    const logged = localStorage.getItem("adminLogged");
+    if (logged === "true") {
+      setAdmin({ username: ADMIN_USER.username });
     }
   }, []);
 
-  // Save whenever admin changes
-  useEffect(() => {
-    if (admin) {
-      localStorage.setItem("admin", JSON.stringify(admin));
-    }
-  }, [admin]);
-
-  // Signup function
-  const signup = (data) => {
-    setAdmin(data);
-    localStorage.setItem("admin", JSON.stringify(data));
-    alert("Admin account created!");
-  };
-
   // Login function
-  const login = (email, pass) => {
-    const savedAdmin = JSON.parse(localStorage.getItem("admin"));
-    if (!savedAdmin) return { success: false, msg: "No admin registered!" };
-
-    if (savedAdmin.email === email && savedAdmin.pass === pass) {
-      setIsLoggedIn(true);
-      setAdmin(savedAdmin);
-      localStorage.setItem("isLoggedIn", "true");
-      return { success: true };
+  const login = (username, password) => {
+    if (username === ADMIN_USER.username && password === ADMIN_USER.password) {
+      localStorage.setItem("adminLogged", "true");
+      setAdmin({ username });
+      return { success: true, message: "Login successful" };
+    } else {
+      return { success: false, message: "Invalid admin credentials" };
     }
-    return { success: false, msg: "Invalid credentials!" };
   };
 
-  // Logout
+  // Logout function
   const logout = () => {
-    setIsLoggedIn(false);
+    localStorage.removeItem("adminLogged");
     setAdmin(null);
-    localStorage.removeItem("isLoggedIn");
   };
 
   return (
-    <AppContext.Provider value={{ admin, signup, login, logout, isLoggedIn }}>
+    <AuthContext.Provider value={{ admin, login, logout }}>
       {children}
-    </AppContext.Provider>
+    </AuthContext.Provider>
   );
+};
+
+// Hook to use auth context
+export const useAuth = () => {
+  return useContext(AuthContext);
 };
