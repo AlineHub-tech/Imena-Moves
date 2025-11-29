@@ -13,6 +13,8 @@ import Collaboration from './pages/Collaboration';
 import Info from './pages/Info';
 import UserDashboard from './pages/UserDashboard';
 import Landing from "./pages/Landing";
+import { AuthProvider } from "./Context/AuthContext";
+import { HistoryProvider } from "./Context/HistoryContext";
 // import Entertainment from "./page/Entertainment";
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -23,6 +25,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <AppProvider>
+        <HistoryProvider>
+          <AuthProvider>
                  <Routes>
                 <Route path = "/" element = {<Landing />} />
                 {/* <Route path="/landing" element={<Landing />} /> */}
@@ -43,6 +47,8 @@ export default function App() {
                  <Route path="/signup" element={<Signup />} />
                 <Route path="/logout" element={<Logout />} />
               </Routes>
+               </AuthProvider>
+               </HistoryProvider>
       </AppProvider>
     </BrowserRouter>
   );
