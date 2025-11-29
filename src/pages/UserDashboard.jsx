@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Dashboard.css";
 import { AppProvider } from '../Context/AppContext';
+import { HistoryProvider } from "../Context/HistoryContext";
 export default function UserDashboard() {
   const [attendance,setAttendance] = useState([]);
   const [members,setMembers] = useState([]);
@@ -22,6 +23,7 @@ export default function UserDashboard() {
 
   return (
     <AppProvider>
+      <HistoryProvider>
     <div className="dash-roo">
       <h1>UserDashboard Overview</h1>
       <div className="dash-sta">
@@ -62,7 +64,7 @@ export default function UserDashboard() {
         </div>
       </div>
     </div>
+    </HistoryProvider>
     </AppProvider>
   );
 }
-

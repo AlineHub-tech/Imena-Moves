@@ -41,7 +41,7 @@ export default function About(){
         <div className="lp-ctas">
             <a href="" className="btn primary"><Link to='/services'>Our Services</Link></a>
             <a href="" className="btn ghost"><Link to='/learn'>Learn More</Link></a>
-            <a href="" className="btn primary"><Link to='/'>Back Home</Link></a>
+            <a href="" className="btn primary"><Link to='/about'>Back Home</Link></a>
           </div>
       </div>
     </div>

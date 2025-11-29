@@ -1,65 +1,65 @@
+import React, { useState } from 'react';
+import '../styles/History.css';
+import { useHistory } from "../Context/HistoryContext";
 import Sidebar from '../components/Sidebar';
-import React from "react";
-import "../styles/History.css";
-import { FaCalendarAlt, FaAward, FaStar } from "react-icons/fa";
+import { FaMoon, FaSun } from 'react-icons/fa';
 
-const historyData = [
-  {
-    id:1,
-    year:2023,
-    title:"First Dance Workshop",
-    desc:"Abana barenga 50 bitabiriye imyitozo ya mbere ya dance workshop muri Kigali.",
-    icon:<FaCalendarAlt/>
-  },
-  {
-    id:2,
-    year:2024,
-    title:"Music Competition",
-    desc:"Hateguwe amarushanwa ya muzika aho abana bagaragaje impano zabo imbere y’abarezi n’ababyeyi.",
-    icon:<FaAward/>
-  },
-  {
-    id:3,
-    year:2025,
-    title:"Talent Showcase",
-    desc:"Abana 100 berekanye impano zabo muri stage yateguwe na Imena Moves, harimo dance, vocals, n’instrumental.",
-    icon:<FaStar/>
+export default function History() { 
+  const { attendanceRecords, members } = useHistory();
+  const [darkMode, setDarkMode] = useState(false); 
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [date, setDate] = useState(new Date().toISOString().slice(0,10));
+
+  const toggleDarkMode = () => setDarkMode(!darkMode);
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+
+  const list = attendanceRecords.filter(r=> r.date === date);
+  const summary = { 
+    present: list.filter(l=>l.status==='Present').length, 
+    absent: list.filter(l=>l.status==='Absent').length 
+  };
+
+  function memberName(id){ 
+    const m = members.find(x=>x.id===id); 
+    return m ? m.fullName : 'Unknown'; 
   }
-];
 
-export default function History(){
-  return (
-    <div className="history-root">
-      <Sidebar/>
-      <div className="history-hero">
-        <h1>Our History</h1>
-        <p>Amwe mu mateka n’ibikorwa by’ingenzi bya Imena Moves kuva yatangira.</p>
-      </div>
+  return ( 
+    <div className={`page history-page ${darkMode ? 'dark-mode' : ''}`}>
+      <Sidebar  />
+      <div className='main-content'> 
+        <nav className='top-navbar'>
+          <h1>History</h1> 
+          <div className='nav-actions'>
+            <div className='dark-light-toggle' onClick={toggleDarkMode}> 
+              {darkMode ? <FaSun /> : <FaMoon />} 
+            </div> 
+            <button className='sidebar-toggle' onClick={toggleSidebar}></button> 
+          </div> 
+        </nav>
 
-      <div className="timeline-container">
-        {historyData.map((item, idx)=>(
-          <div key={item.id} className={`timeline-item ${idx%2===0 ? "left":"right"}`}>
-            <div className="timeline-icon">{item.icon}</div>
-            <div className="timeline-content">
-              <h3>{item.year} — {item.title}</h3>
-              <p>{item.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+        <div className='history-controls'>
+          <label>Date 
+            <input type='date' value={date} onChange={e=>setDate(e.target.value)} />
+          </label>
+        </div>
 
-      <div className="card-grid">
-        {historyData.map(item=>(
-          <div key={item.id} className="card">
-            <div className="card-icon">{item.icon}</div>
-            <div className="card-body">
-              <h3>{item.year} — {item.title}</h3>
-              <p>{item.desc}</p>
-            </div>
-          </div>
-        ))}
+        <div className='history-summary'>
+          Date: {date} — Present: {summary.present} — Absent: {summary.absent}
+        </div>
+
+        <div className='history-list'>
+          {list.length === 0 ? 
+            <p className='no-history'>There is No History Here</p> 
+            : list.map(r => (
+              <div className='hist-item' key={r.id}>
+                <div className='hist-name'>{memberName(r.memberId)}</div>
+                <div className='hist-status'>{r.status} • {r.time}</div>
+              </div>
+            ))
+          }
+        </div>
       </div>
     </div>
   );
 }
-

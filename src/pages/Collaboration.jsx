@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Collaboration.css";
 import { AppProvider } from '../Context/AppContext';
+import { HistoryProvider } from "../Context/HistoryContext";
 import Sidebar from '../components/Sidebar';
 const LS_ABA = "collaboration";
 
@@ -49,6 +50,7 @@ export default function Collaboration() {
 
   return (
     <AppProvider>
+      <HistoryProvider>
     <div className="collab-root">
       <Sidebar/>
       <h1>Collaboration / ABA</h1>
@@ -87,6 +89,7 @@ export default function Collaboration() {
         <button disabled={page===totalPages} onClick={()=>setPage(p=>Math.min(totalPages,p+1))}>Next</button>
       </div>
     </div>
+    </HistoryProvider>
     </AppProvider>
   );
 }

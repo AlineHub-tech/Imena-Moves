@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../styles/Settings.css";
 import Sidebar from '../components/Sidebar';
 import { AppProvider } from '../Context/AppContext';
+import { HistoryProvider } from "../Context/HistoryContext";
 const LS_ANN = "announcements";
 
 function uid(pref="a"){ return pref + Math.random().toString(36).slice(2,9); }
@@ -50,6 +51,7 @@ export default function Settings() {
 
   return (
     <AppProvider>
+      <HistoryProvider>
     <div className="settings-root">
       <Sidebar/>
       <h1>Settings / Announcements</h1>
@@ -86,6 +88,7 @@ export default function Settings() {
         <button disabled={page===totalPages} onClick={()=>setPage(p=>Math.min(totalPages,p+1))}>Next</button>
       </div>
     </div>
+    </HistoryProvider>
     </AppProvider>
   );
 }

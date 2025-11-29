@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../styles/Attendance.css";
 import Sidebar from '../components/Sidebar';
 import { AppProvider } from '../Context/AppContext';
+import { HistoryProvider } from "../Context/HistoryContext";
 const LS_ATT = "attendance";
 const LS_MEM = "members";
 const LS_HISTORY = "history";
@@ -68,6 +69,7 @@ export default function Attendance() {
 
   return (
     <AppProvider>
+      <HistoryProvider>
     <div className="attendance-root">
       <Sidebar/>
       <h1>Attendance</h1>
@@ -115,7 +117,9 @@ export default function Attendance() {
         <span>Page {page} of {totalPages}</span>
         <button disabled={page===totalPages} onClick={()=>setPage(p=>Math.min(totalPages,p+1))}>Next</button>
       </div>
-    </div>
+    </div> 
+    </HistoryProvider>
     </AppProvider>
+   
   );
 }

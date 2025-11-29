@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../styles/Dashboard.css";
 import { AppProvider } from '../Context/AppContext';
 import Sidebar from '../components/Sidebar';
+import { HistoryProvider } from "../Context/HistoryContext";
 export default function Dashboard() {
   const [attendance,setAttendance] = useState([]);
   const [members,setMembers] = useState([]);
@@ -23,6 +24,7 @@ export default function Dashboard() {
 
   return (
      <AppProvider>
+      <HistoryProvider>
     <div className="dash-root">
       <Sidebar/>
       <h1>Dashboard Overview</h1>
@@ -64,6 +66,7 @@ export default function Dashboard() {
         </div>
       </div>
     </div>
+    </HistoryProvider>
     </AppProvider>
   );
 }

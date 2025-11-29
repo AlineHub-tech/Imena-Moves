@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../styles/Entertainment.css";
 import Sidebar from '../components/Sidebar';
 import { AppProvider } from '../Context/AppContext';
+import { HistoryProvider } from "../Context/HistoryContext";
 const LS_ENT = "entertainment";
 
 function uid(pref="e"){ return pref + Math.random().toString(36).slice(2,9); }
@@ -49,7 +50,8 @@ export default function Info() {
 
   return (
     <AppProvider>
-    <div className="ent-root">
+      <HistoryProvider>
+    <div className="settings-root">
         <Sidebar/>
       <h1>Entertainment / Imena Moves</h1>
       <div className="stats-card total">Total Moves: {moves.length}</div>
@@ -87,6 +89,7 @@ export default function Info() {
         <button disabled={page===totalPages} onClick={()=>setPage(p=>Math.min(totalPages,p+1))}>Next</button>
       </div>
     </div>
+    </HistoryProvider>
     </AppProvider>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/Member.css";
 import Sidebar from '../components/Sidebar';
 import { AppProvider } from '../Context/AppContext';
+import { HistoryProvider } from "../Context/HistoryContext";
 const LS_MEMBERS = "members";
 
 function uid(pref="m"){ return pref + Math.random().toString(36).slice(2,9); }
@@ -82,6 +83,7 @@ export default function Members() {
 
   return (
     <AppProvider>
+      <HistoryProvider>
     <div className="members-root">
       <Sidebar/>
       <h1>Members</h1>
@@ -129,6 +131,7 @@ export default function Members() {
         ))}
       </div>
     </div>
+    </HistoryProvider>
     </AppProvider>
   );
 }
