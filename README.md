@@ -15,7 +15,13 @@
   <img src="https://img.shields.io/badge/State-ContextAPI-orange" />
   <img src="https://img.shields.io/badge/License-MIT-lightgrey" />
 </p>
+# 📸 Screenshots
 
+### Landing page 
+[Dashboard](public/screenshots/landing.png)
+
+### Dashboard Page
+![Members](public/screenshots/dashboard.png)
 ## ✨ Features Overview
 
 | Module | Description |
