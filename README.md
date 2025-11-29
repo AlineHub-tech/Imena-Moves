@@ -18,6 +18,11 @@
 <img width="1345" height="650" alt="im_090825" src="https://github.com/user-attachments/assets/541075de-b7ce-4306-92e7-240f7825ba4b" />
 
 
+### Landing page 
+[Dashboard](public/screenshots/landing.png)
+
+### Dashboard Page
+![Members](public/screenshots/dashboard.png)
 ## ✨ Features Overview
 
 | Module | Description |
