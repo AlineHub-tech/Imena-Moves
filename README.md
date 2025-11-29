@@ -1,61 +1,142 @@
-# 🌟 IMENA MOVES – Attendance & Member Management System
 
-![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
-![React](https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge)
-![CSS](https://img.shields.io/badge/Style-CSS-important?style=for-the-badge)
-![Version](https://img.shields.io/badge/Version-1.0.0-yellow?style=for-the-badge)
-![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen?style=for-the-badge)
 
-IMENA MOVES is a modern, responsive, and animated member attendance system built with **React**.  
-It handles **attendance**, **member records**, **history tracking**, **analytics**, and **user management**, all stored on **LocalStorage** for simplicity and speed.
+<h1 align="center">IMENA MOVES – React Management System</h1>
 
----
+<p align="center">
+  A complete management system for Members, Attendance,
+ Collaboration, Entertainment, and Settings — built with React +
+ Global Context + LocalStorage Persistence.
+</p>
 
-## 🚀 Features
+<p align="center">
+  <img src="https://img.shields.io/badge/React-18.2-blue" />
+  <img src="https://img.shields.io/badge/Vite-5-purple" />
+  <img src="https://img.shields.io/badge/LocalStorage-Persistent-green" />
+  <img src="https://img.shields.io/badge/State-ContextAPI-orange" />
+  <img src="https://img.shields.io/badge/License-MIT-lightgrey" />
+</p>
 
-### ✅ **Member Management**
-- Add, edit, delete, search members  
-- Member information card  
-- Filter & advanced search  
+## ✨ Features Overview
 
-### 🕒 **Attendance Tracking**
-- Mark attendance daily  
-- Real-time counting  
-- Daily & weekly summaries  
-
-### 📊 **History Tracking**
-- Full historical logs of every activity  
-- Track attendance per day / per member  
-- Automatic localStorage syncing  
-
-### ⚙️ **Settings & User Customization**
-- Theme options  
-- Sidebar & navbar animations  
-- Profile settings  
-- Notifications panel  
-
-### 🤝 **Collaboration Module**
-- Team management  
-- Internal messaging (future update)  
-- Activity feeds  
-
-### 🎬 **Entertainment Section**
-- News cards  
-- Videos / Music player (upcoming)  
-- Daily motivational messages  
+| Module | Description |
+|--------|-------------|
+| *Members* | Add, edit, delete, list all members with auto-generated IDs |
+| *Attendance* | Mark attendance per member & track dates |
+| *Collaboration* | Group messages, announcements & notes |
+| *Entertainment* | Music, videos, dance routines, playlists |
+| *History* | Auto-record everything: "added member", "updated", "attendance recorded" |
+| *Settings* | Themes, username preferences, personalization |
+| *Global State* | Entire app powered by one global AppContext |
+| *Persistence* | All modules save to LocalStorage permanently |
 
 ---
 
-## 🧱 Tech Stack
+## 🏗 Project Structure
 
-| Layer       | Technology |
-|-------------|------------|
-| Frontend    | React JS |
-| Styling     | CSS3 / Custom UI |
-| State Mgmt  | LocalStorage |
-| Animations  | AOS / CSS keyframes |
-| Icons       | FontAwesome / Remix Icons |
+src/ │── context/ │     └── AppContext.jsx │ │── utils/ │     └── local.js │ │── pages/ │     ├── Dashboard.jsx │     ├── Members.jsx │     ├── Attendance.jsx │     ├── Collaboration.jsx │     ├── Entertainment.jsx │     ├── History.jsx │     └── Settings.jsx │ │── components/ │     ├── Navbar.jsx │     ├── Footer.jsx │     └── MemberCard.jsx │ │── App.jsx └── main.jsx
 
 ---
 
-## 📁 Project Structure
+## 🧠 Global State Architecture (AppContext)
+
+AppContext ifasha app yose:
+
+- Stores:
+  - members
+  - attendance
+  - collaboration
+  - entertainment
+  - history
+  - settings
+
+- Functions:
+  - addMember()
+  - updateMember()
+  - deleteMember()
+  - markAttendance()
+  - addCollaboration()
+  - addEntertainment()
+  - pushHistory()
+  - saveToLocal() / loadFromLocal()
+
+- Automatic persistence using:
+```js
+localStorage.setItem("imena_data", JSON.stringify(state));
+
+
+---
+
+🚀 Installation & Running
+
+1️⃣ Clone repo
+
+git clone <your-repo-url>
+cd imenamoves
+
+2️⃣ Install dependencies
+
+npm install
+
+3️⃣ Run the project
+
+npm run dev
+
+4️⃣ Build for production
+
+npm run build
+
+
+---
+
+📦 Technologies Used
+
+Frontend
+
+React 18
+
+Vite 5
+
+Context API
+
+JavaScript ES2023
+
+CSS3 / Tailwind (depending on your styling)
+
+React Icons
+
+
+Storage
+
+LocalStorage Sync
+
+
+
+---
+
+🔌 Example: Adding Member via Global Context
+
+addMember({
+  id: crypto.randomUUID(),
+  fullName: "John Doe",
+  gender: "Male",
+  phone: "+250788...",
+  joinDate: "2025-01-01"
+});
+
+
+
+
+📜 License
+
+This project is licensed under the MIT License.
+
+
+
+👩‍💻 Author
+
+Umugwaneza Aline
+Full-stack Developer | 
+📍 Kigali – Rwanda
+GitHub: https://github.com/AlineHub-tech
+<img width="1345" height="650" alt="im" src="https://github.com/user-attachments/assets/53347cd6-9e0a-4c34-b421-3d27c25993c6" />
+<img width="1322" height="641" alt="dash" src="https://github.com/user-attachments/assets/a3457a33-daa3-4699-a375-e177e32f75bc" />
