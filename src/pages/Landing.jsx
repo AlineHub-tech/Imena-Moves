@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import { FaUsers, FaDumbbell, FaHandshake, FaMusic, FaCamera, FaStar } 
 from "react-icons/fa";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faChildDress } from '@fortawesome/free-solid-svg-icons';
 import FooterSimple from "../components/FooterSimple";
 import "../styles/LandingPage.css";
 import Logo from "../assets/Logo.png";
@@ -42,7 +44,7 @@ export default function Landing(){
         </div>
 
         <div className="lp-hero-art">
-          <img src="/dance-hero.png" alt="dancers" />
+          {/* <FontAwesomeIcon icon={faChildDress} size="3x" style={{ color: "#f39c12" }} /> */}
           <div className="floating-circles">
             <span className="circle c1"></span>
             <span className="circle c2"></span>
