@@ -25,4 +25,5 @@ export default function FooterSimple(){
       <div className="footer-bottom">© 2025 Imena Moves — All Rights Reserved</div>
     </footer>
   );
+
 }
