@@ -1,14 +1,14 @@
 import React from "react";
 import { FaYoutube, FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
 import "../styles/FooterSimple.css";
-
+import Logo from "../assets/Logo.png";
 export default function FooterSimple(){
   return (
     <footer className="site-footer">
       <div className="footer-inner">
         <div>
-          <img src="/logo.png" alt="Imena Moves" className="footer-logo" />
-          <p className="muted">Imena Moves — Talent. Discipline. Movement.</p>
+          <img src="/Logo.png" alt="Imena Moves" className="footer-logo" />
+          <p className="muted">Imena Moves Talent. Discipline. Movement.</p>
         </div>
         {/* <div className="footer-links">
           <a href="/services">Services</a>
@@ -22,7 +22,7 @@ export default function FooterSimple(){
           <a href="https://www.tiktok.com/@imenamovies" target="_blank" rel="noreferrer"><FaTiktok/></a>
         </div>
       </div>
-      <div className="footer-bottom">© 2025 Imena Moves — All Rights Reserved</div>
+      <div className="footer-bottom">© 2025 Imena Moves  All Rights Reserved</div>
     </footer>
   );
 
