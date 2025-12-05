@@ -7,7 +7,7 @@ export default function FooterSimple(){
     <footer className="site-footer">
       <div className="footer-inner">
         <div>
-          <img src="/Logo.png" alt="Imena Moves" className="footer-logo" />
+          <img src={Logo} alt="Imena Moves" className="footer-logo" />
           <p className="muted">Imena Moves Talent. Discipline. Movement.</p>
         </div>
         {/* <div className="footer-links">
@@ -27,4 +27,5 @@ export default function FooterSimple(){
   );
 
 }
+
 
